@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Comptoir — Gestion de commerce</title>
+
+    <meta name="description"
+          content="Comptoir vous aide à gérer votre caisse, votre stock et les chiffres de votre commerce.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================
+         NAVIGATION
+    ====================================== -->
+
+    <header class="navbar">
+
+        <a href="#" class="logo-container" aria-label="Comptoir - Accueil">
+
+            <div class="logo-icon">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+
+                    <path d="M3 9h18l-2-6H5L3 9Z"/>
+                    <path d="M5 9v12h14V9"/>
+                    <path d="M9 21v-7h6v7"/>
+
+                </svg>
+
+            </div>
+
+            <span class="logo-text">Comptoir</span>
+
+        </a>
+
+
+        <nav class="nav-actions" aria-label="Navigation principale">
+
+            <!-- Checkbox cachée pour le mode sombre sans JS -->
+            <input type="checkbox" id="theme-switch" class="sr-only" aria-label="Changer de thème">
+
+            <!-- Label stylisé comme le bouton d'origine -->
+            <label for="theme-switch" class="theme-toggle" aria-hidden="true" title="Changer de thème">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="22"
+                     height="22"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+
+                    <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6.5 6.5 0 0 0 8.268 8.268c.344-.215.825-.003.803.401"/>
+
+                </svg>
+            </label>
+
+
+            <a href="#" class="btn-link">
+                Se connecter
+            </a>
+
+            <a href="#" class="btn-primary-dark">
+                S'inscrire
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- =====================================
+             SECTION PRINCIPALE
+        ====================================== -->
+
+        <section class="hero-container">
+
+            <div class="hero-card">
+
+                <div class="hero-content">
+
+                    <p class="hero-subtitle">
+                        LA GESTION DE VOTRE COMMERCE, SIMPLIFIÉE
+                    </p>
+
+                    <h1 class="hero-title">
+                        Votre commerce,
+                        tenu au franc près.
+                    </h1>
+
+                    <p class="hero-description">
+                        Gérez vos ventes, suivez votre stock et comprenez
+                        vos chiffres depuis un seul endroit.
+                        Simplement, efficacement et sans perdre le fil.
+                    </p>
+
+                    <div class="hero-cta">
+
+                        <a href="#" class="btn-cta">
+                            Découvrir Comptoir
+
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="20"
+                                 height="20"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 aria-hidden="true">
+
+                                <path d="M5 12h14"/>
+                                <path d="m12 5 7 7-7 7"/>
+
+                            </svg>
+
+                        </a>
+
+                        <p class="cta-note">
+                            Tout votre commerce, au même endroit.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Image principale -->
+
+                <div class="hero-image-wrapper">
+
+                    <img
+                        src="image/img.jpg"
+                        alt="Aperçu de l'interface de Comptoir"
+                        class="hero-custom-image"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             FONCTIONNALITÉS
+        ====================================== -->
+
+        <section class="features-section">
+
+            <h2 class="features-title reveal">
+                Tout ce qu'il faut pour gérer votre commerce.
+            </h2>
+
+
+            <div class="features-grid">
+
+                <!-- Carte 1 -->
+
+                <article class="feature-card reveal">
+
+                    <div class="icon-box">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="24"
+                             height="24"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round"
+                             aria-hidden="true">
+
+                            <rect x="3" y="4" width="18" height="16" rx="2"/>
+                            <path d="M7 8h10"/>
+                            <path d="M7 12h2"/>
+                            <path d="M15 12h2"/>
+                            <path d="M7 16h2"/>
+                            <path d="M15 16h2"/>
+
+                        </svg>
+
+                    </div>
+
+                    <h3 class="card-title">
+                        Caisse rapide
+                    </h3>
+
+                    <p class="card-description">
+                        Enregistrez vos ventes facilement et gardez
+                        une trace claire de chaque transaction.
+                    </p>
+
+                </article>
+
+
+                <!-- Carte 2 -->
+
+                <article class="feature-card reveal">
+
+                    <div class="icon-box">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="24"
+                             height="24"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round"
+                             aria-hidden="true">
+
+                            <path d="m12 3 9 5-9 5-9-5 9-5Z"/>
+                            <path d="m3 12 9 5 9-5"/>
+                            <path d="m3 16 9 5 9-5"/>
+
+                        </svg>
+
+                    </div>
+
+                    <h3 class="card-title">
+                        Stock à jour
+                    </h3>
+
+                    <p class="card-description">
+                        Suivez les entrées et les sorties de vos produits
+                        et repérez rapidement les stocks faibles.
+                    </p>
+
+                </article>
+
+
+                <!-- Carte 3 -->
+
+                <article class="feature-card reveal">
+
+                    <div class="icon-box">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="24"
+                             height="24"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round"
+                             aria-hidden="true">
+
+                            <path d="M3 3v18h18"/>
+                            <path d="m19 9-5 5-4-4-3 3"/>
+
+                        </svg>
+
+                    </div>
+
+                    <h3 class="card-title">
+                        Chiffres du jour
+                    </h3>
+
+                    <p class="card-description">
+                        Consultez vos ventes et vos performances pour
+                        mieux comprendre l'activité de votre commerce.
+                    </p>
+
+                </article>
+
+
+                <!-- Carte 4 -->
+
+                <article class="feature-card reveal">
+
+                    <div class="icon-box">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="24"
+                             height="24"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round"
+                             aria-hidden="true">
+
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="10" cy="7" r="4"/>
+                            <path d="M20 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+
+                        </svg>
+
+                    </div>
+
+                    <h3 class="card-title">
+                        Équipe et rôles
+                    </h3>
+
+                    <p class="card-description">
+                        Organisez le travail de votre équipe et gérez
+                        les accès selon les responsabilités de chacun.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <!-- =====================================
+                 BANDEAU D'INFORMATION
+            ====================================== -->
+
+            <div class="info-banner reveal">
+
+                <div class="info-item">
+
+                    <svg class="info-icon"
+                         xmlns="http://www.w3.org/2000/svg"
+                         width="22"
+                         height="22"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         aria-hidden="true">
+
+                        <path d="M20 6 9 17l-5-5"/>
+
+                    </svg>
+
+                    <span>Une gestion plus simple</span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <svg class="info-icon"
+                         xmlns="http://www.w3.org/2000/svg"
+                         width="22"
+                         height="22"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         aria-hidden="true">
+
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+
+                    </svg>
+
+                    <span>Un meilleur suivi au quotidien</span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <svg class="info-icon"
+                         xmlns="http://www.w3.org/2000/svg"
+                         width="22"
+                         height="22"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         aria-hidden="true">
+
+                        <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/>
+                        <path d="m9 12 2 2 4-4"/>
+
+                    </svg>
+
+                    <span>Vos données mieux organisées</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 PIED DE PAGE
+            ====================================== -->
+
+            <footer class="footer-info reveal">
+
+                <p>
+                    © 2026 Comptoir, gestion de commerce
+                </p>
+
+                <p>
+                    Fait à Bamako
+                </p>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

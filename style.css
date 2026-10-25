@@ -1,0 +1,593 @@
+/* =========================================
+   1. VARIABLES DE COULEURS & THÈMES (PUR CSS)
+========================================= */
+:root {
+    /* Mode Clair (Par défaut) */
+    --bg-body: #f5f4ef;
+    --text-main: #1a202c;
+    --navbar-bg: rgba(245, 244, 239, 0.75);
+    --logo-text: #1a2b3c;
+    --toggle-color: #1a2b3c;
+    --toggle-hover-bg: #000000;
+    --toggle-hover-color: #ffffff;
+    
+    --link-color: #1a2b3c;
+    --link-hover-bg: #e6f2f0;
+    --link-hover-text: #1b4943;
+
+    --hero-card-bg: #101d33;
+    --hero-subtitle: #a0aec0;
+    --hero-title: #ffffff;
+    --hero-desc: #cbd5e0;
+    --hero-cta-bg: #ffffff;
+    --hero-cta-color: #101d33;
+
+    --features-title: #0f172a;
+    --card-bg: #ffffff;
+    --card-title: #0f172a;
+    --card-desc: #475569;
+    --card-border: rgba(0, 0, 0, 0.03);
+
+    --info-banner-bg: #eae7df;
+    --info-text: #1e293b;
+    --footer-text: #64748b;
+}
+
+/* Mode Sombre activé instantanément dès que la checkbox est cochée */
+body:has(#theme-switch:checked) {
+    --bg-body: #0b0f19;
+    --text-main: #f8fafc;
+    --navbar-bg: rgba(11, 15, 25, 0.85);
+    --logo-text: #ffffff;
+    --toggle-color: #f8fafc;
+    --toggle-hover-bg: #38bdf8;
+    --toggle-hover-color: #0b0f19;
+
+    --link-color: #f8fafc;
+    --link-hover-bg: #1e293b;
+    --link-hover-text: #38bdf8;
+
+    --hero-card-bg: #111827;
+    --hero-subtitle: #94a3b8;
+    --hero-title: #ffffff;
+    --hero-desc: #9ca3af;
+    --hero-cta-bg: #38bdf8;
+    --hero-cta-color: #0b0f19;
+
+    --features-title: #f8fafc;
+    --card-bg: #111827;
+    --card-title: #f8fafc;
+    --card-desc: #9ca3af;
+    --card-border: rgba(255, 255, 255, 0.05);
+
+    --info-banner-bg: #1e293b;
+    --info-text: #f8fafc;
+    --footer-text: #94a3b8;
+}
+
+/* Classe utilitaire pour cacher la checkbox tout en restant accessible aux lecteurs d'écran */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* =========================================
+   2. RÉINITIALISATION
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Helvetica, Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* =========================================
+   3. NAVBAR
+========================================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+
+    background-color: var(--navbar-bg);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Logo */
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: 100px;
+    text-decoration: none;
+
+    animation: apparition 0.7s ease-out both;
+}
+
+.logo-icon {
+    background-color: #1b4943;
+    color: #ffffff;
+
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.logo-text {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--logo-text);
+}
+
+
+/* Navigation */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-right: 100px;
+
+    animation: apparition 0.7s ease-out 0.2s both;
+}
+
+
+/* =========================================
+   4. BOUTON DE LA LUNE (LABEL)
+========================================= */
+
+.theme-toggle {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 50%;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--toggle-color);
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--toggle-hover-bg);
+    color: var(--toggle-hover-color);
+    border-color: var(--toggle-hover-bg);
+
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transform: rotate(-10deg);
+}
+
+.theme-toggle:active {
+    transform: scale(0.9);
+}
+
+
+/* =========================================
+   5. BOUTON SE CONNECTER
+========================================= */
+
+.btn-link {
+    text-decoration: none;
+    color: var(--link-color);
+
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    padding: 0.6rem 1rem;
+
+    border: 1px solid transparent;
+    border-radius: 9999px;
+
+    display: inline-block;
+
+    transition: all 0.3s ease;
+}
+
+.btn-link:hover {
+    color: var(--link-hover-text);
+    background-color: var(--link-hover-bg);
+    border-color: var(--link-hover-text);
+
+    box-shadow: 0 4px 12px rgba(27, 73, 67, 0.15);
+    transform: translateY(-2px);
+}
+
+.btn-link:active {
+    transform: translateY(0) scale(0.97);
+}
+
+
+/* =========================================
+   6. BOUTON S'INSCRIRE
+========================================= */
+
+.btn-primary-dark {
+    text-decoration: none;
+
+    background-color: #152238;
+    color: #ffffff;
+
+    padding: 0.5rem 1.25rem;
+
+    border: 1px solid #152238;
+    border-radius: 9999px;
+
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    display: inline-block;
+
+    transition: all 0.3s ease;
+}
+
+.btn-primary-dark:hover {
+    background-color: transparent;
+    color: #152238;
+    border-color: #152238;
+
+    box-shadow: 0 5px 15px rgba(21, 34, 56, 0.2);
+    transform: translateY(-3px);
+}
+
+.btn-primary-dark:active {
+    transform: translateY(0) scale(0.97);
+}
+
+
+/* =========================================
+   7. SECTION HERO
+========================================= */
+
+.hero-container {
+    padding: 0 1.5rem 2rem;
+    margin-top: 15px;
+}
+
+.hero-card {
+    background-color: var(--hero-card-bg);
+    border-radius: 24px;
+
+    padding: 10px 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 650px;
+    gap: 3rem;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Contenu principal */
+
+.hero-content {
+    flex: 1;
+    max-width: 580px;
+
+    animation: apparition 0.8s ease-out 0.4s both;
+}
+
+.hero-subtitle {
+    color: var(--hero-subtitle);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    color: var(--hero-title);
+    font-size: 3.5rem;
+    font-weight: 800;
+
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-description {
+    color: var(--hero-desc);
+    font-size: 1.1rem;
+
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+
+/* Bouton principal */
+
+.hero-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.btn-cta {
+    background-color: var(--hero-cta-bg);
+    color: var(--hero-cta-color);
+
+    text-decoration: none;
+
+    padding: 0.85rem 1.75rem;
+    border-radius: 9999px;
+
+    font-weight: 700;
+    font-size: 1rem;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-cta:active {
+    transform: scale(0.97);
+}
+
+.cta-note {
+    color: var(--hero-subtitle);
+    font-size: 0.85rem;
+}
+
+
+/* Image principale */
+
+.hero-image-wrapper {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 550px;
+
+    animation: apparition 0.8s ease-out 0.7s both;
+}
+
+.hero-custom-image {
+    width: 100%;
+    height: auto;
+
+    border-radius: 16px;
+    object-fit: contain;
+}
+
+
+/* =========================================
+   8. SECTION FONCTIONNALITÉS
+========================================= */
+
+.features-section {
+    margin-top: 30px;
+    min-height: 600px;
+
+    padding: 30px 100px;
+}
+
+
+/* Titre */
+
+.features-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+
+    color: var(--features-title);
+
+    max-width: 650px;
+    line-height: 1.15;
+
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.02em;
+}
+
+
+/* Grille des cartes */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+
+/* =========================================
+   9. CARTES DES FONCTIONNALITÉS
+========================================= */
+
+.feature-card {
+    background-color: var(--card-bg);
+
+    border-radius: 18px;
+    padding: 1.5rem;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    border: 1px solid var(--card-border);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Icônes */
+
+.icon-box {
+    background-color: #e6f2f0;
+    color: #1b5b52;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 1.25rem;
+}
+
+.icon-box svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Titres des cartes */
+
+.card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+
+    color: var(--card-title);
+    margin-bottom: 0.75rem;
+}
+
+
+/* Descriptions */
+
+.card-description {
+    font-size: 0.92rem;
+    color: var(--card-desc);
+
+    line-height: 1.45;
+}
+
+
+/* =========================================
+   10. BANDEAU D'INFORMATION
+========================================= */
+
+.info-banner {
+    background-color: var(--info-banner-bg);
+
+    border-radius: 16px;
+    padding: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 3rem;
+    margin-bottom: 4rem;
+    transition: background-color 0.3s ease;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    color: var(--info-text);
+
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.info-icon {
+    color: #1b5b52;
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   11. PIED DE PAGE
+========================================= */
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 1rem;
+
+    color: var(--footer-text);
+    font-size: 0.9rem;
+}
+
+
+/* =========================================
+   12. ANIMATIONS AU CHARGEMENT
+========================================= */
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
