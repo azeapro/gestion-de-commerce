@@ -196,7 +196,7 @@ body {
 }
 
 .theme-toggle:hover {
-    background-color: var(--toggle-hover-bg);
+    background-color: - white - black; 
     color: var(--toggle-hover-color);
     border-color: var(--toggle-hover-bg);
 
